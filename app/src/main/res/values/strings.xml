@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">PlantySick</string>
+    <string name="title_activity_register">Register</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="feedback_bad_text">Your feedback is invaluable to us. Please let us know how can
+        we make Planty sick app better.</string>
+    <string name="feedback_good_text">Happy to hear! Would you mind rating Planty sick? </string>
+    <string-array name="array_indian_state">
+        <item>Select your District</item>
+        <item>Chittagong</item>
+        <item>Dhaka</item>
+        <item>Rajshahi</item>
+
+    </string-array>
+
+    <string-array name="array_default_districts">
+        <item>Select your Thana</item>
+
+    </string-array>
+    <string-array name="Dhaka">
+        <item>Select your district</item>
+        <item>Motijheel</item>
+        <item>Mirpur</item>
+        <item>Gulsan</item>
+        <item>Banani</item>
+        <item>Shahbag</item>
+        <item>Banani</item>
+
+
+    </string-array>
+    <string-array name="Chittagong">
+        <item>Select your district</item>
+        <item>Raozan</item>
+        <item>Karnaphuli</item>
+        <item>Anwara</item>
+        <item>Patiya</item>
+        <item>Hathhazari</item>
+        <item>Mirsharai</item>
+        <item>Rangunia</item>
+        <item>Boalkhali</item>
+    </string-array>
+    <string-array name="Rajshahi">
+        <item>Select your district</item>
+        <item>Bagmara</item>
+        <item>Paba</item>
+        <item>Chargat</item>
+        <item>Durghapur</item>
+        <item>Godagari</item>
+        <item>Mohanpur</item>
+        <item>Bagha</item>
+        <item>Puthia</item>
+
+    </string-array>
+
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>

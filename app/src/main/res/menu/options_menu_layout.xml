@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/Quick_start"
+        android:title="Quick Start"
+        app:showAsAction="collapseActionView"
+        />
+    <item
+        android:id="@+id/About_us"
+        android:title="About Us"
+        app:showAsAction="collapseActionView"
+        /><item
+    android:id="@+id/field_monitor"
+    android:title="Field Monitor"
+    app:showAsAction="collapseActionView"
+    />
+    <item
+        android:id="@+id/feedback"
+        android:title="Give Feedback"
+        app:showAsAction="collapseActionView">
+
+    </item>
+
+</menu>

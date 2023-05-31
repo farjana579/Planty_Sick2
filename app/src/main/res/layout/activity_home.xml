@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:fillViewport="true"
+    tools:context=".Home">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+            <!--THIS IS TEXT VIEW FOR SCANNING-->
+
+            <TextView
+                android:id="@+id/scan_text"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:fontFamily="@font/autour_one"
+                android:text="Start Diagnosis"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="@color/text"
+                app:layout_constraintBottom_toTopOf="@id/animation_view_scan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </TextView>
+
+            <!--THIS IS IMAGEVIEW FOR OUR Animation IN  Home-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view_scan"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scan_text"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/scan"
+                tools:ignore="MissingClass,MissingConstraints"
+                tools:layout_constraintTop_toBottomOf="@id/scan_text">
+
+            </com.airbnb.lottie.LottieAnimationView>
+
+
+            <!--THIS IS BUTTON FOR SCANNING WITH CAMERA-->
+            <Button
+                android:id="@+id/scan_button"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/button_border"
+                android:ems="10"
+                android:fontFamily="@font/anton"
+                android:text="Take a picture"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animation_view_scan"
+                tools:textSize="20sp" />
+            <!--This textview for home-->
+            <TextView
+                android:id="@+id/scan_text_two"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Or"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scan_button"
+                android:textAlignment="center"
+                android:textColor="@color/text"/>
+            <!--THIS BUTTON FOR SCANNIG FROM GALLERY-->
+            <Button
+                android:id="@+id/scan_button_gallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="50dp"
+                android:text="Choose from gallery"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/anton"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scan_text_two" />
+        <!--THIS IS IMAGE VIEW FOR CAPTURE IMAGE OR IMAGE CHOSEN FROM GALLERY-->
+            <ImageView
+                android:id="@+id/CapturedImage"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scan_button_gallery" />
+        <!--THIS IS TEXTVIEW FOR SCANNING RESULT-->
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CapturedImage"
+                tools:ignore="InvalidId" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>
