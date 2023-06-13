@@ -232,10 +232,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+    public int getReactSum(int post_id){
+        String query = "select sum(react) from reacts where post_id = " + post_id;
+        SQLiteDatabase db = this.getReadableDatabase();
 
-    public Cursor getdata() {
+        Cursor result = db.rawQuery(query, null);
+
+        if(result.moveToFirst()){
+            return result.getInt(0);
+        }else{
+            return 0;
+        }
+
+
+    }
+    public Cursor getdata(int pageNo) {
+        int skip = (pageNo - 1) * 10;
+
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME_2, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME_2 + " LIMIT 10 " +
+                "OFFSET " + skip, null);
         return cursor;
     }
 
@@ -273,6 +289,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } catch (Exception e) {
             Log.i("babel", "addReact: " + e);
             return false;
+        }
+    }
+
+    public Cursor getComments(int postId) {
+        String query = "select * from " + COMMENT_TABLE + " where " + POSTID + " = " + postId;
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+    public void addComment(String username, String comment, int postid){
+        ContentValues cv = new ContentValues();
+        cv.put(CMNT_USER, username);
+        cv.put(COMMENT, comment);
+        cv.put(POSTID, postid);
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(COMMENT_TABLE, null, cv);
+    }
+    public int getReact(int postId, String username) {
+        String query = "select " + REACT + " from " + REACT_TABLE +
+                " where " + REACT_USERNAME + "  = \"" + username + "\" and " + REACT_POSTID + "= " + postId + ";";
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            Cursor result = db.rawQuery(query, null);
+            if (result.moveToFirst())
+                return result.getInt(0);
+            return 0;
+        } catch (Exception e) {
+            Log.i("babel", "getReact: " + e);
+            return 0;
         }
     }
 }

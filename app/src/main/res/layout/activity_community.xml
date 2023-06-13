@@ -5,14 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Community"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".Community">
 
 
      <androidx.recyclerview.widget.RecyclerView
          android:id="@+id/recycler_view"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
+         android:layout_marginTop="0dp"
+         android:layout_marginBottom="50dp"
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent">
@@ -23,18 +25,49 @@
          android:id="@+id/ask_Community_Button"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_gravity="bottom|end"
-         android:layout_margin="20dp"
+         android:layout_gravity="right|bottom"
+         android:layout_marginBottom="55dp"
          android:backgroundTint="@color/text"
          android:drawableLeft="@drawable/ic_baseline_mode_edit_outline_24"
-         android:text="Ask Community"
-         android:textColor="@color/white"
          android:padding="0dp"
-         android:textSize="12sp"
-          >
+         android:text="Ask Community"
+           android:textColor="@color/white"
+         android:textSize="12sp">
 
      </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_gravity="bottom"
+         android:background="@color/white"
+         android:gravity="center"
+         android:paddingTop="10dp"
+         android:paddingBottom="9dp">
 
+          <Button
+              android:id="@+id/previous_btn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="20dp"
+              android:text="Previous"
+              android:backgroundTint="@color/text"
+              />
+
+          <Button
+              android:id="@+id/show_page_nmbr"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="20dp"
+              android:text="1"
+              android:backgroundTint="@color/text"/>
+
+          <Button
+              android:id="@+id/next_btn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Next"
+              android:backgroundTint="@color/text"/>
+     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

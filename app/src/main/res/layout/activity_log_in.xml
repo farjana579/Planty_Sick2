@@ -23,12 +23,6 @@
         app:srcCompat="@drawable/register_cauli" />
 
 
-    <!--THIS IS  INPUT FIELD FOR OUR USER_NAME  IN LOG IN-->
-
-    <!--THIS IS  INPUT FIELD FOR OUR PASSWORD  IN LOG IN-->
-
-
-    <!--THIS IS  LOG IN BUTTON FOR OUR LOGIN in LOG IN-->
 
 
     <TextView
@@ -86,6 +80,31 @@
         app:layout_constraintTop_toBottomOf="@+id/userName"
          />
 
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPassword">
+
+    </CheckBox>
+    <TextView
+        android:id="@+id/rememberTet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        android:textSize="15sp"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/rememberMe"
+        app:layout_constraintTop_toBottomOf="@+id/userPassword"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp">
+
+    </TextView>
+
     <Button
         android:id="@+id/logInButton"
         android:layout_width="0dp"
@@ -102,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/rememberMe" />
 
     <TextView
         android:id="@+id/textView"

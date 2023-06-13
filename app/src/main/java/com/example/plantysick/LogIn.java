@@ -16,7 +16,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
 
     public EditText userName, password;
-    public Button login, register;
+    public Button login, register, rememberMe;
     DatabaseHelper databaseHelper;
 
     @Override
@@ -28,10 +28,12 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
          password = (EditText) findViewById(R.id.userPassword);
          login = findViewById(R.id.logInButton);
          register = findViewById(R.id.register_button);
+         rememberMe = findViewById(R.id.rememberMe);
         databaseHelper = new DatabaseHelper(this);
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
         login.setOnClickListener(this);
         register.setOnClickListener(this);
+        rememberMe.setOnClickListener(this);
     }
     public void onStart() {
 
@@ -56,11 +58,15 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
             boolean result = databaseHelper.findpassword(user_name, Password);
             Log.i("farjana", "onClick: " + result);
             if(result == true){
-//
-                SessionManagement sessionManagement = new SessionManagement(LogIn.this);
-                sessionManagement.saveSession(user_name);
 
-                moveMainactivity();
+
+
+                    SessionManagement sessionManagement = new SessionManagement(LogIn.this);
+                    sessionManagement.saveSession(user_name);
+
+                    moveMainactivity();
+
+
             }
             else{
                 Toast.makeText(getApplicationContext(),"wrong user_name or password", Toast.LENGTH_SHORT).show();
