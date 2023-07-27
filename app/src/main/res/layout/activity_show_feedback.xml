@@ -6,16 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Show_Feedback"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/avg_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="10dp"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/background">
+        app:layout_constraintTop_toBottomOf="@+id/avg_rating">
 
 
     </androidx.recyclerview.widget.RecyclerView>

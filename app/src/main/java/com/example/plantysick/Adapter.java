@@ -58,12 +58,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyviewHolder> {
         holder.downvote.setButtonDrawable(R.drawable.ic_baseline_thumb_down_off_alt_24);
         holder.upvote.setButtonDrawable(R.drawable.ic_baseline_thumb_up_off_alt_24);
     }
-    holder.upvote.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    holder.upvote.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-            if(b){
+        public void onClick(View view) {
+
+            if(holder.upvote.isChecked()){
                 int current = Integer.valueOf(holder.reactCount.getText().toString());
-                if(!holder.downvote.isChecked())
+                if(holder.downvote.isChecked())
                     current += 2;
                 else{
                     current += 1;
@@ -74,19 +75,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyviewHolder> {
                 holder.downvote.setChecked(false);
                 db.addReact(Integer.valueOf(ids.get(position).toString()), userName.get(position).toString(), 1);
             }else{
-                int current = count - 1 ;
+                int current =  Integer.valueOf(holder.reactCount.getText().toString()) - 1 ;
                 holder.reactCount.setText(current + "");
                 holder.upvote.setButtonDrawable(R.drawable.ic_baseline_thumb_up_off_alt_24);
                 db.addReact(Integer.valueOf(ids.get(position).toString()), userName.get(position).toString(), 0);
             }
         }
     });
-    holder.downvote.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    holder.downvote.setOnClickListener(new View.OnClickListener() {
         @Override
-        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-            if(b){
+        public void onClick(View view) {
+
+            if(holder.downvote.isChecked()){
                 int current = Integer.valueOf(holder.reactCount.getText().toString());
-                if(!holder.upvote.isChecked())
+                if(holder.upvote.isChecked())
                     current -= 2;
                 else{
                     current -= 1;
@@ -98,9 +100,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyviewHolder> {
                 db.addReact(Integer.valueOf(ids.get(position).toString()), userName.get(position).toString(), -1);
             }else{
 
-                int current = count + 1 ;
+                int current = Integer.valueOf(holder.reactCount.getText().toString()) + 1 ;
                 holder.reactCount.setText(current + "");
-
                 holder.downvote.setButtonDrawable(R.drawable.ic_baseline_thumb_down_off_alt_24);
                 db.addReact(Integer.valueOf(ids.get(position).toString()), userName.get(position).toString(), 0);
             }

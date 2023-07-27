@@ -6,13 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Show_Feedback extends AppCompatActivity {
 
-
+    TextView avgRating;
     DatabaseHelper databaseHelper;
     RecyclerView recyclerView;
     ArrayList<String> userName, feedback, rating, date;
@@ -22,6 +23,7 @@ public class Show_Feedback extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_feedback);
 
+        avgRating = findViewById(R.id.avg_rating);
         databaseHelper = new DatabaseHelper(this);
         userName = new ArrayList<>();
         feedback = new ArrayList<>();
@@ -38,7 +40,7 @@ public class Show_Feedback extends AppCompatActivity {
     private void displayFeedback() {
         Cursor cursor = databaseHelper.getFeedbackdata();
         if(cursor.getCount()==0){
-            Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
 
         }
         else{
@@ -47,7 +49,7 @@ public class Show_Feedback extends AppCompatActivity {
                 feedback.add(cursor.getString(2));
                 rating.add(String.valueOf(cursor.getFloat(3)));
                 date.add(cursor.getString(4));
-                Toast.makeText(this, "full", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "full", Toast.LENGTH_SHORT).show();
             }
         }
     }

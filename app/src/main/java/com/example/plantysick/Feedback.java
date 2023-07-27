@@ -56,7 +56,7 @@ public class Feedback extends AppCompatActivity implements View.OnClickListener 
         bad.setOnClickListener(this);
 
 
-
+        //Log.i("knock", "onCreate: " + databaseHelper.avgRating());
 
         //submit button to send data from activity to database
         submit.setOnClickListener(this);

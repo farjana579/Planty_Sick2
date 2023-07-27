@@ -19,23 +19,44 @@
         android:theme="@style/Theme.PlantySick"
         tools:targetApi="31">
         <activity
-            android:name=".DieasesAndCure"
-            android:exported="true">
+            android:name=".PlantActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
+        </activity>
+        <activity
+            android:name=".Average_rating"
+            android:exported="false"
+            android:label="Average Rating"
+            android:theme="@style/Theme.AppCompat.Light">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DieasesAndCure"
+            android:exported="false"
+            android:label="Dieases And Cure"
+            android:theme="@style/Theme.AppCompat.Light">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
             android:name=".SingleCommunityPost"
-            android:exported="false">
+            android:exported="false"
+            android:label="Community Post"
+            android:theme="@style/Theme.AppCompat.Light">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Show_Feedback"
-            android:exported="false">
+            android:exported="false"
+            android:label="Feedback"
+            android:theme="@style/Theme.AppCompat.Light">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -43,28 +64,24 @@
         <activity
             android:name=".MainActivity2"
             android:exported="false">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Feedback"
-            android:exported="false">
+            android:exported="false"
+            android:label="Give Feedback"
+            android:theme="@style/Theme.AppCompat.Light">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Profile"
-            android:exported="false">
+            android:exported="false"
+            android:label="Profile"
+            android:theme="@style/Theme.AppCompat.Light">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -72,6 +89,7 @@
         <activity
             android:name=".Ask_Community"
             android:exported="false"
+            android:label="Ask Community"
             android:theme="@style/Theme.AppCompat.Light">
             <meta-data
                 android:name="android.app.lib_name"
@@ -86,7 +104,9 @@
         </activity>
         <activity
             android:name=".Field_Monitor"
-            android:exported="false">
+            android:exported="false"
+            android:label="Field Monitor"
+            android:theme="@style/Theme.AppCompat.Light">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -94,6 +114,7 @@
         <activity
             android:name=".QuickStart"
             android:exported="false"
+            android:label="Quick Start"
             android:theme="@style/Theme.AppCompat.Light">
             <meta-data
                 android:name="android.app.lib_name"
@@ -121,13 +142,11 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             tools:ignore="MissingClass">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
         </activity>
         <activity
             android:name=".MainActivity"

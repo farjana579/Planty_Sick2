@@ -96,10 +96,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"idetify click",Toast.LENGTH_LONG).show();
             return true;
         }
-        if(item.getItemId()==R.id.About_us){
-            //Intent intent = new Intent(getApplicationContext(),Home.class);
-            //startActivity(intent);
-            Toast.makeText(getApplicationContext(),"idetify click",Toast.LENGTH_LONG).show();
+        if(item.getItemId()==R.id.rating){
+            Intent intent = new Intent(getApplicationContext(),Average_rating.class);
+            startActivity(intent);
+            //Toast.makeText(getApplicationContext(),"idetify click",Toast.LENGTH_LONG).show();
             return true;
         }
         if(item.getItemId()==R.id.field_monitor){

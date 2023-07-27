@@ -33,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String REACT_USERNAME = "username";
     private static final String REACT = "react";
 
-    private static final int VERSION_NUMBER = 25;
+    private static final int VERSION_NUMBER = 27;
     private static final String TABLE_NAME_2 = "community_post";
     private static final String TABLE_NAME_3 = "feedback_post";
 
@@ -70,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_3 = "CREATE TABLE " + TABLE_NAME_3 + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + USERNAME + " VARCHAR(255) NOT NULL, "
             + FEEDBACK + " VARCHAR(255) NOT NULL, "
-            + RATING + " VARCHAR(255) NOT NULL, "
+            + RATING + " FLOAT NOT NULL, "
             + DATE + " TEXT NOT NULL );";
 
     //like and dislike store table
@@ -109,10 +109,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             //sqLiteDatabase.execSQL(CREATE_TABLE);
             //sqLiteDatabase.execSQL(CREATE_TABLE_2);
-            //sqLiteDatabase.execSQL(CREATE_TABLE_3);
+            sqLiteDatabase.execSQL(CREATE_TABLE_3);
 
-            sqLiteDatabase.execSQL(create_comment_table);
-            sqLiteDatabase.execSQL(create_react_table);
+            //sqLiteDatabase.execSQL(create_comment_table);
+            //sqLiteDatabase.execSQL(create_react_table);
 
             Toast.makeText(context, "table is created", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
@@ -127,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             //sqLiteDatabase.execSQL(DROP_TABLE);
             Toast.makeText(context, "Table Dropped", Toast.LENGTH_SHORT).show();
             //sqLiteDatabase.execSQL(DROP_TABLE_2);
-//            sqLiteDatabase.execSQL(DROP_TABLE_3);
+            sqLiteDatabase.execSQL(DROP_TABLE_3);
             onCreate(sqLiteDatabase);
             //Toast.makeText(context," table dropped",Toast.LENGTH_LONG).show();
         } catch (Exception e) {
@@ -291,7 +291,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-
+    public double avgRating(){
+        String str = "select avg(rating) from " + TABLE_NAME_3;
+        SQLiteDatabase db = getReadableDatabase();
+        try{
+            Cursor c = db.rawQuery(str, null);
+            c.moveToFirst();
+            return c.getDouble(0);
+        }catch (Exception e){
+            Log.i("knock", "avgRating: " + e);
+            return -1;
+        }
+    }
     public Cursor getComments(int postId) {
         String query = "select * from " + COMMENT_TABLE + " where " + POSTID + " = " + postId;
         SQLiteDatabase db = this.getReadableDatabase();
